@@ -1,7 +1,7 @@
 package maps
 
 import (
-	"github.com/opengovern/og-describer-render/discovery/describers"
+	describer "github.com/opengovern/og-describer-render/discovery/describers"
 	model "github.com/opengovern/og-describer-render/discovery/pkg/models"
 	"github.com/opengovern/og-describer-render/discovery/provider"
 	"github.com/opengovern/og-describer-render/platform/constants"
@@ -16,8 +16,8 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListBlueprints),
-		GetDescriber:    provider.DescribeSingleByRender(describers.GetBlueprint),
+		ListDescriber:   provider.DescribeListByRender(describer.ListBlueprints),
+		GetDescriber:    provider.DescribeSingleByRender(describer.GetBlueprint),
 	},
 
 	"Render/Deploy": {
@@ -26,7 +26,7 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListDeploys),
+		ListDescriber:   provider.DescribeListByRender(describer.ListDeploys),
 		GetDescriber:    nil,
 	},
 
@@ -36,8 +36,8 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListDisks),
-		GetDescriber:    provider.DescribeSingleByRender(describers.GetDisk),
+		ListDescriber:   provider.DescribeListByRender(describer.ListDisks),
+		GetDescriber:    provider.DescribeSingleByRender(describer.GetDisk),
 	},
 
 	"Render/EnvGroup": {
@@ -46,8 +46,8 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListEnvGroups),
-		GetDescriber:    provider.DescribeSingleByRender(describers.GetEnvGroup),
+		ListDescriber:   provider.DescribeListByRender(describer.ListEnvGroups),
+		GetDescriber:    provider.DescribeSingleByRender(describer.GetEnvGroup),
 	},
 
 	"Render/Environment": {
@@ -56,8 +56,8 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListEnvironments),
-		GetDescriber:    provider.DescribeSingleByRender(describers.GetEnvironment),
+		ListDescriber:   provider.DescribeListByRender(describer.ListEnvironments),
+		GetDescriber:    provider.DescribeSingleByRender(describer.GetEnvironment),
 	},
 
 	"Render/Header": {
@@ -66,7 +66,7 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListHeaders),
+		ListDescriber:   provider.DescribeListByRender(describer.ListHeaders),
 		GetDescriber:    nil,
 	},
 
@@ -76,7 +76,7 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListJobs),
+		ListDescriber:   provider.DescribeListByRender(describer.ListJobs),
 		GetDescriber:    nil,
 	},
 
@@ -86,8 +86,8 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListPostgresInstances),
-		GetDescriber:    provider.DescribeSingleByRender(describers.GetPostgresInstance),
+		ListDescriber:   provider.DescribeListByRender(describer.ListPostgresInstances),
+		GetDescriber:    provider.DescribeSingleByRender(describer.GetPostgresInstance),
 	},
 
 	"Render/Project": {
@@ -96,8 +96,8 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListProjects),
-		GetDescriber:    provider.DescribeSingleByRender(describers.GetProject),
+		ListDescriber:   provider.DescribeListByRender(describer.ListProjects),
+		GetDescriber:    provider.DescribeSingleByRender(describer.GetProject),
 	},
 
 	"Render/Route": {
@@ -106,7 +106,7 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListRoutes),
+		ListDescriber:   provider.DescribeListByRender(describer.ListRoutes),
 		GetDescriber:    nil,
 	},
 
@@ -116,8 +116,8 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListServices),
-		GetDescriber:    provider.DescribeSingleByRender(describers.GetService),
+		ListDescriber:   provider.DescribeListByRender(describer.ListServices),
+		GetDescriber:    provider.DescribeSingleByRender(describer.GetService),
 	},
 
 	"Render/Postgresql/Backup": {
@@ -126,7 +126,7 @@ var ResourceTypes = map[string]model.ResourceType{
 		Tags:            map[string][]string{},
 		Labels:          map[string]string{},
 		Annotations:     map[string]string{},
-		ListDescriber:   provider.DescribeListByRender(describers.ListPostgresqlBackups),
+		ListDescriber:   provider.DescribeListByRender(describer.ListPostgresqlBackups),
 		GetDescriber:    nil,
 	},
 }

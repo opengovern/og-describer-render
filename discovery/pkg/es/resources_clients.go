@@ -95,12 +95,12 @@ func (p ProjectPaginator) NextPage(ctx context.Context) ([]Project, error) {
 }
 
 var listProjectFilters = map[string]string{
-	"createdAt":      "Description.CreatedAt",
-	"environmentIds": "Description.EnvironmentIDs",
-	"id":             "Description.ID",
-	"name":           "Description.Name",
-	"owner":          "Description.Owner",
-	"updatedAt":      "Description.UpdatedAt",
+	"created_at":      "Description.CreatedAt",
+	"environment_ids": "Description.EnvironmentIDs",
+	"id":              "Description.ID",
+	"name":            "Description.Name",
+	"owner":           "Description.Owner",
+	"updated_at":      "Description.UpdatedAt",
 }
 
 func ListProject(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -164,12 +164,12 @@ func ListProject(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData
 }
 
 var getProjectFilters = map[string]string{
-	"createdAt":      "Description.CreatedAt",
-	"environmentIds": "Description.EnvironmentIDs",
-	"id":             "Description.ID",
-	"name":           "Description.Name",
-	"owner":          "Description.Owner",
-	"updatedAt":      "Description.UpdatedAt",
+	"created_at":      "Description.CreatedAt",
+	"environment_ids": "Description.EnvironmentIDs",
+	"id":              "Description.ID",
+	"name":            "Description.Name",
+	"owner":           "Description.Owner",
+	"updated_at":      "Description.UpdatedAt",
 }
 
 func GetProject(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -308,14 +308,14 @@ func (p EnvironmentPaginator) NextPage(ctx context.Context) ([]Environment, erro
 }
 
 var listEnvironmentFilters = map[string]string{
-	"databasesIds":    "Description.DatabasesIDs",
-	"envGroupIds":     "Description.EnvGroupIDs",
-	"id":              "Description.ID",
-	"name":            "Description.Name",
-	"projectId":       "Description.ProjectID",
-	"protectedStatus": "Description.ProtectedStatus",
-	"redisIds":        "Description.RedisIDs",
-	"serviceIds":      "Description.ServiceIDs",
+	"databases_ids":    "Description.DatabasesIDs",
+	"env_group_ids":    "Description.EnvGroupIDs",
+	"id":               "Description.ID",
+	"name":             "Description.Name",
+	"project_id":       "Description.ProjectID",
+	"protected_status": "Description.ProtectedStatus",
+	"redis_ids":        "Description.RedisIDs",
+	"service_ids":      "Description.ServiceIDs",
 }
 
 func ListEnvironment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -379,14 +379,14 @@ func ListEnvironment(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 }
 
 var getEnvironmentFilters = map[string]string{
-	"databasesIds":    "Description.DatabasesIDs",
-	"envGroupIds":     "Description.EnvGroupIDs",
-	"id":              "Description.ID",
-	"name":            "Description.Name",
-	"projectId":       "Description.ProjectID",
-	"protectedStatus": "Description.ProtectedStatus",
-	"redisIds":        "Description.RedisIDs",
-	"serviceIds":      "Description.ServiceIDs",
+	"databases_ids":    "Description.DatabasesIDs",
+	"env_group_ids":    "Description.EnvGroupIDs",
+	"id":               "Description.ID",
+	"name":             "Description.Name",
+	"project_id":       "Description.ProjectID",
+	"protected_status": "Description.ProtectedStatus",
+	"redis_ids":        "Description.RedisIDs",
+	"service_ids":      "Description.ServiceIDs",
 }
 
 func GetEnvironment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -525,28 +525,28 @@ func (p PostgresPaginator) NextPage(ctx context.Context) ([]Postgres, error) {
 }
 
 var listPostgresFilters = map[string]string{
-	"createdAt":               "Description.CreatedAt",
-	"dashboardUrl":            "Description.DashboardURL",
-	"databaseName":            "Description.DatabaseName",
-	"databaseUser":            "Description.DatabaseUser",
-	"diskSizeGB":              "Description.DiskSizeGB",
-	"environmentId":           "Description.EnvironmentID",
-	"expiresAt":               "Description.ExpiresAt",
-	"highAvailabilityEnabled": "Description.HighAvailabilityEnabled",
-	"id":                      "Description.ID",
-	"ipAllowList":             "Description.IPAllowList",
-	"name":                    "Description.Name",
-	"owner":                   "Description.Owner",
-	"plan":                    "Description.Plan",
-	"primaryPostgresID":       "Description.PrimaryPostgresID",
-	"readReplicas":            "Description.ReadReplicas",
-	"region":                  "Description.Region",
-	"role":                    "Description.Role",
-	"status":                  "Description.Status",
-	"suspended":               "Description.Suspended",
-	"suspenders":              "Description.Suspenders",
-	"updatedAt":               "Description.UpdatedAt",
-	"version":                 "Description.Version",
+	"created_at":                "Description.CreatedAt",
+	"dashboard_url":             "Description.DashboardURL",
+	"database_name":             "Description.DatabaseName",
+	"database_user":             "Description.DatabaseUser",
+	"disk_size_gb":              "Description.DiskSizeGB",
+	"environment_id":            "Description.EnvironmentID",
+	"expires_at":                "Description.ExpiresAt",
+	"high_availability_enabled": "Description.HighAvailabilityEnabled",
+	"id":                        "Description.ID",
+	"ip_allow_list":             "Description.IPAllowList",
+	"name":                      "Description.Name",
+	"owner":                     "Description.Owner",
+	"plan":                      "Description.Plan",
+	"primary_postgres_id":       "Description.PrimaryPostgresID",
+	"read_replicas":             "Description.ReadReplicas",
+	"region":                    "Description.Region",
+	"role":                      "Description.Role",
+	"status":                    "Description.Status",
+	"suspended":                 "Description.Suspended",
+	"suspenders":                "Description.Suspenders",
+	"updated_at":                "Description.UpdatedAt",
+	"version":                   "Description.Version",
 }
 
 func ListPostgres(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -610,28 +610,28 @@ func ListPostgres(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 }
 
 var getPostgresFilters = map[string]string{
-	"createdAt":               "Description.CreatedAt",
-	"dashboardUrl":            "Description.DashboardURL",
-	"databaseName":            "Description.DatabaseName",
-	"databaseUser":            "Description.DatabaseUser",
-	"diskSizeGB":              "Description.DiskSizeGB",
-	"environmentId":           "Description.EnvironmentID",
-	"expiresAt":               "Description.ExpiresAt",
-	"highAvailabilityEnabled": "Description.HighAvailabilityEnabled",
-	"id":                      "Description.ID",
-	"ipAllowList":             "Description.IPAllowList",
-	"name":                    "Description.Name",
-	"owner":                   "Description.Owner",
-	"plan":                    "Description.Plan",
-	"primaryPostgresID":       "Description.PrimaryPostgresID",
-	"readReplicas":            "Description.ReadReplicas",
-	"region":                  "Description.Region",
-	"role":                    "Description.Role",
-	"status":                  "Description.Status",
-	"suspended":               "Description.Suspended",
-	"suspenders":              "Description.Suspenders",
-	"updatedAt":               "Description.UpdatedAt",
-	"version":                 "Description.Version",
+	"created_at":                "Description.CreatedAt",
+	"dashboard_url":             "Description.DashboardURL",
+	"database_name":             "Description.DatabaseName",
+	"database_user":             "Description.DatabaseUser",
+	"disk_size_gb":              "Description.DiskSizeGB",
+	"environment_id":            "Description.EnvironmentID",
+	"expires_at":                "Description.ExpiresAt",
+	"high_availability_enabled": "Description.HighAvailabilityEnabled",
+	"id":                        "Description.ID",
+	"ip_allow_list":             "Description.IPAllowList",
+	"name":                      "Description.Name",
+	"owner":                     "Description.Owner",
+	"plan":                      "Description.Plan",
+	"primary_postgres_id":       "Description.PrimaryPostgresID",
+	"read_replicas":             "Description.ReadReplicas",
+	"region":                    "Description.Region",
+	"role":                      "Description.Role",
+	"status":                    "Description.Status",
+	"suspended":                 "Description.Suspended",
+	"suspenders":                "Description.Suspenders",
+	"updated_at":                "Description.UpdatedAt",
+	"version":                   "Description.Version",
 }
 
 func GetPostgres(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -770,26 +770,26 @@ func (p ServicePaginator) NextPage(ctx context.Context) ([]Service, error) {
 }
 
 var listServiceFilters = map[string]string{
-	"autoDeploy":         "Description.AutoDeploy",
-	"branch":             "Description.Branch",
-	"buildFilter":        "Description.BuildFilter",
-	"createdAt":          "Description.CreatedAt",
-	"dashboardUrl":       "Description.DashboardURL",
-	"environmentId":      "Description.EnvironmentID",
-	"id":                 "Description.ID",
-	"imagePath":          "Description.ImagePath",
-	"name":               "Description.Name",
-	"notifyOnFail":       "Description.NotifyOnFail",
-	"ownerId":            "Description.OwnerID",
-	"registryCredential": "Description.RegistryCredential",
-	"repo":               "Description.Repo",
-	"rootDir":            "Description.RootDir",
-	"serviceDetails":     "Description.ServiceDetails",
-	"slug":               "Description.Slug",
-	"suspended":          "Description.Suspended",
-	"suspenders":         "Description.Suspenders",
-	"type":               "Description.Type",
-	"updatedAt":          "Description.UpdatedAt",
+	"auto_deploy":         "Description.AutoDeploy",
+	"branch":              "Description.Branch",
+	"build_filter":        "Description.BuildFilter",
+	"created_at":          "Description.CreatedAt",
+	"dashboard_url":       "Description.DashboardURL",
+	"environment_id":      "Description.EnvironmentID",
+	"id":                  "Description.ID",
+	"image_path":          "Description.ImagePath",
+	"name":                "Description.Name",
+	"notify_on_fail":      "Description.NotifyOnFail",
+	"owner_id":            "Description.OwnerID",
+	"registry_credential": "Description.RegistryCredential",
+	"repo":                "Description.Repo",
+	"root_dir":            "Description.RootDir",
+	"service_details":     "Description.ServiceDetails",
+	"slug":                "Description.Slug",
+	"suspended":           "Description.Suspended",
+	"suspenders":          "Description.Suspenders",
+	"type":                "Description.Type",
+	"updated_at":          "Description.UpdatedAt",
 }
 
 func ListService(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -853,26 +853,26 @@ func ListService(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData
 }
 
 var getServiceFilters = map[string]string{
-	"autoDeploy":         "Description.AutoDeploy",
-	"branch":             "Description.Branch",
-	"buildFilter":        "Description.BuildFilter",
-	"createdAt":          "Description.CreatedAt",
-	"dashboardUrl":       "Description.DashboardURL",
-	"environmentId":      "Description.EnvironmentID",
-	"id":                 "Description.ID",
-	"imagePath":          "Description.ImagePath",
-	"name":               "Description.Name",
-	"notifyOnFail":       "Description.NotifyOnFail",
-	"ownerId":            "Description.OwnerID",
-	"registryCredential": "Description.RegistryCredential",
-	"repo":               "Description.Repo",
-	"rootDir":            "Description.RootDir",
-	"serviceDetails":     "Description.ServiceDetails",
-	"slug":               "Description.Slug",
-	"suspended":          "Description.Suspended",
-	"suspenders":         "Description.Suspenders",
-	"type":               "Description.Type",
-	"updatedAt":          "Description.UpdatedAt",
+	"auto_deploy":         "Description.AutoDeploy",
+	"branch":              "Description.Branch",
+	"build_filter":        "Description.BuildFilter",
+	"created_at":          "Description.CreatedAt",
+	"dashboard_url":       "Description.DashboardURL",
+	"environment_id":      "Description.EnvironmentID",
+	"id":                  "Description.ID",
+	"image_path":          "Description.ImagePath",
+	"name":                "Description.Name",
+	"notify_on_fail":      "Description.NotifyOnFail",
+	"owner_id":            "Description.OwnerID",
+	"registry_credential": "Description.RegistryCredential",
+	"repo":                "Description.Repo",
+	"root_dir":            "Description.RootDir",
+	"service_details":     "Description.ServiceDetails",
+	"slug":                "Description.Slug",
+	"suspended":           "Description.Suspended",
+	"suspenders":          "Description.Suspenders",
+	"type":                "Description.Type",
+	"updated_at":          "Description.UpdatedAt",
 }
 
 func GetService(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1011,14 +1011,14 @@ func (p JobPaginator) NextPage(ctx context.Context) ([]Job, error) {
 }
 
 var listJobFilters = map[string]string{
-	"createdAt":    "Description.CreatedAt",
-	"finishedAt":   "Description.FinishedAt",
-	"id":           "Description.ID",
-	"planId":       "Description.PlanID",
-	"serviceId":    "Description.ServiceID",
-	"startCommand": "Description.StartCommand",
-	"startedAt":    "Description.StartedAt",
-	"status":       "Description.Status",
+	"created_at":    "Description.CreatedAt",
+	"finished_at":   "Description.FinishedAt",
+	"id":            "Description.ID",
+	"plan_id":       "Description.PlanID",
+	"service_id":    "Description.ServiceID",
+	"start_command": "Description.StartCommand",
+	"started_at":    "Description.StartedAt",
+	"status":        "Description.Status",
 }
 
 func ListJob(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1082,14 +1082,14 @@ func ListJob(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 }
 
 var getJobFilters = map[string]string{
-	"createdAt":    "Description.CreatedAt",
-	"finishedAt":   "Description.FinishedAt",
-	"id":           "Description.ID",
-	"planId":       "Description.PlanID",
-	"serviceId":    "Description.ServiceID",
-	"startCommand": "Description.StartCommand",
-	"startedAt":    "Description.StartedAt",
-	"status":       "Description.Status",
+	"created_at":    "Description.CreatedAt",
+	"finished_at":   "Description.FinishedAt",
+	"id":            "Description.ID",
+	"plan_id":       "Description.PlanID",
+	"service_id":    "Description.ServiceID",
+	"start_command": "Description.StartCommand",
+	"started_at":    "Description.StartedAt",
+	"status":        "Description.Status",
 }
 
 func GetJob(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1228,13 +1228,13 @@ func (p DiskPaginator) NextPage(ctx context.Context) ([]Disk, error) {
 }
 
 var listDiskFilters = map[string]string{
-	"createdAt": "Description.CreatedAt",
-	"id":        "Description.ID",
-	"mountPath": "Description.MountPath",
-	"name":      "Description.Name",
-	"serviceId": "Description.ServiceID",
-	"sizeGB":    "Description.SizeGB",
-	"updatedAt": "Description.UpdatedAt",
+	"created_at": "Description.CreatedAt",
+	"id":         "Description.ID",
+	"mount_path": "Description.MountPath",
+	"name":       "Description.Name",
+	"service_id": "Description.ServiceID",
+	"size_gb":    "Description.SizeGB",
+	"updated_at": "Description.UpdatedAt",
 }
 
 func ListDisk(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1298,13 +1298,13 @@ func ListDisk(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 }
 
 var getDiskFilters = map[string]string{
-	"createdAt": "Description.CreatedAt",
-	"id":        "Description.ID",
-	"mountPath": "Description.MountPath",
-	"name":      "Description.Name",
-	"serviceId": "Description.ServiceID",
-	"sizeGB":    "Description.SizeGB",
-	"updatedAt": "Description.UpdatedAt",
+	"created_at": "Description.CreatedAt",
+	"id":         "Description.ID",
+	"mount_path": "Description.MountPath",
+	"name":       "Description.Name",
+	"service_id": "Description.ServiceID",
+	"size_gb":    "Description.SizeGB",
+	"updated_at": "Description.UpdatedAt",
 }
 
 func GetDisk(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1443,14 +1443,14 @@ func (p DeployPaginator) NextPage(ctx context.Context) ([]Deploy, error) {
 }
 
 var listDeployFilters = map[string]string{
-	"commit":     "Description.Commit",
-	"createdAt":  "Description.CreatedAt",
-	"finishedAt": "Description.FinishedAt",
-	"id":         "Description.ID",
-	"image":      "Description.Image",
-	"status":     "Description.Status",
-	"trigger":    "Description.Trigger",
-	"updatedAt":  "Description.UpdatedAt",
+	"commit":      "Description.Commit",
+	"created_at":  "Description.CreatedAt",
+	"finished_at": "Description.FinishedAt",
+	"id":          "Description.ID",
+	"image":       "Description.Image",
+	"status":      "Description.Status",
+	"trigger":     "Description.Trigger",
+	"updated_at":  "Description.UpdatedAt",
 }
 
 func ListDeploy(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1514,14 +1514,14 @@ func ListDeploy(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 }
 
 var getDeployFilters = map[string]string{
-	"commit":     "Description.Commit",
-	"createdAt":  "Description.CreatedAt",
-	"finishedAt": "Description.FinishedAt",
-	"id":         "Description.ID",
-	"image":      "Description.Image",
-	"status":     "Description.Status",
-	"trigger":    "Description.Trigger",
-	"updatedAt":  "Description.UpdatedAt",
+	"commit":      "Description.Commit",
+	"created_at":  "Description.CreatedAt",
+	"finished_at": "Description.FinishedAt",
+	"id":          "Description.ID",
+	"image":       "Description.Image",
+	"status":      "Description.Status",
+	"trigger":     "Description.Trigger",
+	"updated_at":  "Description.UpdatedAt",
 }
 
 func GetDeploy(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1660,13 +1660,13 @@ func (p BlueprintPaginator) NextPage(ctx context.Context) ([]Blueprint, error) {
 }
 
 var listBlueprintFilters = map[string]string{
-	"autoSync": "Description.AutoSync",
-	"branch":   "Description.Branch",
-	"id":       "Description.ID",
-	"lastSync": "Description.LastSync",
-	"name":     "Description.Name",
-	"repo":     "Description.Repo",
-	"status":   "Description.Status",
+	"auto_sync": "Description.AutoSync",
+	"branch":    "Description.Branch",
+	"id":        "Description.ID",
+	"last_sync": "Description.LastSync",
+	"name":      "Description.Name",
+	"repo":      "Description.Repo",
+	"status":    "Description.Status",
 }
 
 func ListBlueprint(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1730,13 +1730,13 @@ func ListBlueprint(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 }
 
 var getBlueprintFilters = map[string]string{
-	"autoSync": "Description.AutoSync",
-	"branch":   "Description.Branch",
-	"id":       "Description.ID",
-	"lastSync": "Description.LastSync",
-	"name":     "Description.Name",
-	"repo":     "Description.Repo",
-	"status":   "Description.Status",
+	"auto_sync": "Description.AutoSync",
+	"branch":    "Description.Branch",
+	"id":        "Description.ID",
+	"last_sync": "Description.LastSync",
+	"name":      "Description.Name",
+	"repo":      "Description.Repo",
+	"status":    "Description.Status",
 }
 
 func GetBlueprint(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1875,13 +1875,13 @@ func (p EnvGroupPaginator) NextPage(ctx context.Context) ([]EnvGroup, error) {
 }
 
 var listEnvGroupFilters = map[string]string{
-	"createdAt":     "Description.CreatedAt",
-	"environmentId": "Description.EnvironmentID",
-	"id":            "Description.ID",
-	"name":          "Description.Name",
-	"ownerId":       "Description.OwnerID",
-	"serviceLinks":  "Description.ServiceLinks",
-	"updatedAt":     "Description.UpdatedAt",
+	"created_at":     "Description.CreatedAt",
+	"environment_id": "Description.EnvironmentID",
+	"id":             "Description.ID",
+	"name":           "Description.Name",
+	"owner_id":       "Description.OwnerID",
+	"service_links":  "Description.ServiceLinks",
+	"updated_at":     "Description.UpdatedAt",
 }
 
 func ListEnvGroup(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
@@ -1945,13 +1945,13 @@ func ListEnvGroup(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 }
 
 var getEnvGroupFilters = map[string]string{
-	"createdAt":     "Description.CreatedAt",
-	"environmentId": "Description.EnvironmentID",
-	"id":            "Description.ID",
-	"name":          "Description.Name",
-	"ownerId":       "Description.OwnerID",
-	"serviceLinks":  "Description.ServiceLinks",
-	"updatedAt":     "Description.UpdatedAt",
+	"created_at":     "Description.CreatedAt",
+	"environment_id": "Description.EnvironmentID",
+	"id":             "Description.ID",
+	"name":           "Description.Name",
+	"owner_id":       "Description.OwnerID",
+	"service_links":  "Description.ServiceLinks",
+	"updated_at":     "Description.UpdatedAt",
 }
 
 func GetEnvGroup(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
