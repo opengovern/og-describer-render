@@ -229,7 +229,7 @@ type ServiceJSON struct {
 	Suspended          string                 `json:"suspended"`
 	Suspenders         []string               `json:"suspenders"`
 	Type               string                 `json:"type"`
-	UpdatedAt          time.Time              `json:"updated_at"`      // converted to snake_case from "updatedAt"
+	UpdatedAt          time.Time              `json:"updatedAt"`      // converted to snake_case from "updatedAt"
 	ServiceDetails     ServiceDetailsJSON     `json:"service_details"` // converted to snake_case from "serviceDetails"
 }
 
@@ -311,7 +311,7 @@ type DiskDescription struct {
 type CommitJSON struct {
 	ID        string    `json:"id"`
 	Message   string    `json:"message"`
-	CreatedAt time.Time `json:"created_at"` // converted to snake_case from "createdAt"
+	CreatedAt time.Time `json:"createdAt"` // converted to snake_case from "createdAt"
 }
 
 type Commit struct {
@@ -343,13 +343,14 @@ type DeployJSON struct {
 	Image      ImageJSON  `json:"image"`
 	Status     string     `json:"status"`
 	Trigger    string     `json:"trigger"`
-	FinishedAt time.Time  `json:"finished_at"` // converted to snake_case from "finishedAt"
-	CreatedAt  time.Time  `json:"created_at"`  // converted to snake_case from "createdAt"
-	UpdatedAt  time.Time  `json:"updated_at"`  // converted to snake_case from "updatedAt"
+	FinishedAt time.Time  `json:"finishedAt"` // converted to snake_case from "finishedAt"
+	CreatedAt  time.Time  `json:"createdAt"`  // converted to snake_case from "createdAt"
+	UpdatedAt  time.Time  `json:"updatedAt"`  // converted to snake_case from "updatedAt"
 }
 
 type DeployDescription struct {
 	ID         string
+	ServiceID 	string
 	Commit     Commit
 	Image      Image
 	Status     string

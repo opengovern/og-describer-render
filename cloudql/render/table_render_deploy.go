@@ -22,6 +22,7 @@ func tableRenderDeploy(ctx context.Context) *plugin.Table {
 		Columns: commonColumns([]*plugin.Column{
 			// Top columns
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "The unique identifier for the deployment.", Transform: transform.FromField("Description.ID")},
+			{Name: "service_id", Type: proto.ColumnType_STRING, Description: "The unique identifier for the service associated with the deployment.", Transform: transform.FromField("Description.ServiceID")},
 			{Name: "commit", Type: proto.ColumnType_JSON, Description: "The commit details associated with the deployment.", Transform: transform.FromField("Description.Commit")},
 			{Name: "image", Type: proto.ColumnType_JSON, Description: "The image details used in the deployment.", Transform: transform.FromField("Description.Image")},
 			{Name: "status", Type: proto.ColumnType_STRING, Description: "The current status of the deployment (e.g., pending, completed).", Transform: transform.FromField("Description.Status")},

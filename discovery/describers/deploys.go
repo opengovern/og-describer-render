@@ -4,11 +4,13 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/opengovern/og-describer-render/discovery/pkg/models"
-	"github.com/opengovern/og-describer-render/discovery/provider"
+	"io"
 	"net/http"
 	"net/url"
 	"sync"
+
+	"github.com/opengovern/og-describer-render/discovery/pkg/models"
+	"github.com/opengovern/og-describer-render/discovery/provider"
 )
 
 func ListDeploys(ctx context.Context, handler *provider.RenderAPIHandler, stream *models.StreamSender) ([]models.Resource, error) {
@@ -65,6 +67,7 @@ func processDeploys(ctx context.Context, handler *provider.RenderAPIHandler, ser
 			params.Set("cursor", cursor)
 		}
 		finalURL := fmt.Sprintf("%s%s/deploys?%s", baseURL, serviceID, params.Encode())
+
 		req, err := http.NewRequest("GET", finalURL, nil)
 		if err != nil {
 			return fmt.Errorf("failed to create request: %w", err)
@@ -78,9 +81,14 @@ func processDeploys(ctx context.Context, handler *provider.RenderAPIHandler, ser
 			}
 			defer resp.Body.Close()
 
-			if e = json.NewDecoder(resp.Body).Decode(&deployListResponse); e != nil {
-				return nil, fmt.Errorf("failed to decode response: %w", e)
+			// unmarshal
+			body, err := io.ReadAll(resp.Body)
+			
+			if err != nil {
+				return nil, fmt.Errorf("failed to read response body: %w", err)
 			}
+			err = json.Unmarshal(body,&deployListResponse)
+			
 			for i, deployResp := range deployListResponse {
 				deploys = append(deploys, deployResp.Deploy)
 				if i == len(deployListResponse)-1 {
@@ -98,6 +106,7 @@ func processDeploys(ctx context.Context, handler *provider.RenderAPIHandler, ser
 			break
 		}
 	}
+
 	for _, deploy := range deploys {
 		wg.Add(1)
 		go func(deploy provider.DeployJSON) {
@@ -121,6 +130,7 @@ func processDeploys(ctx context.Context, handler *provider.RenderAPIHandler, ser
 						Commit:     commit,
 						Image:      image,
 						Status:     deploy.Status,
+						ServiceID: serviceID,
 						Trigger:    deploy.Trigger,
 						FinishedAt: deploy.FinishedAt,
 						CreatedAt:  deploy.CreatedAt,
@@ -133,3 +143,6 @@ func processDeploys(ctx context.Context, handler *provider.RenderAPIHandler, ser
 	}
 	return nil
 }
+
+
+

@@ -2,3 +2,5 @@ build/
 og-describer-template
 .idea
 output.json
+.vscode/launch.json
+discovery/local/__debug_bin3268535377
