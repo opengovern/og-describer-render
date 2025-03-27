@@ -4,11 +4,13 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/opengovern/og-describer-render/discovery/pkg/models"
-	"github.com/opengovern/og-describer-render/discovery/provider"
+	"io"
 	"net/http"
 	"net/url"
 	"sync"
+
+	"github.com/opengovern/og-describer-render/discovery/pkg/models"
+	"github.com/opengovern/og-describer-render/discovery/provider"
 )
 
 func ListServices(ctx context.Context, handler *provider.RenderAPIHandler, stream *models.StreamSender) ([]models.Resource, error) {
@@ -132,8 +134,13 @@ func processServices(ctx context.Context, handler *provider.RenderAPIHandler, re
 				return nil, fmt.Errorf("request execution failed: %w", e)
 			}
 			defer resp.Body.Close()
+			body,err := io.ReadAll(resp.Body)
+			fmt.Printf("body: %s\n", body)
+			if err != nil {
+				return nil, fmt.Errorf("failed to read response body: %w", err)
+			}
 
-			if e = json.NewDecoder(resp.Body).Decode(&serviceListResponse); e != nil {
+			if e = json.Unmarshal(body,&serviceListResponse); e != nil {
 				return nil, fmt.Errorf("failed to decode response: %w", e)
 			}
 			for i, serviceResp := range serviceListResponse {

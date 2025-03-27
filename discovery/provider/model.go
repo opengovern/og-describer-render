@@ -31,8 +31,8 @@ type ProjectResponse struct {
 
 type ProjectJSON struct {
 	ID             string    `json:"id"`
-	CreatedAt      time.Time `json:"created_at"`      // converted to snake_case from "createdAt"
-	UpdatedAt      time.Time `json:"updated_at"`      // converted to snake_case from "updatedAt"
+	CreatedAt      time.Time `json:"createdAt"`      // converted to snake_case from "createdAt"
+	UpdatedAt      time.Time `json:"updatedAt"`      // converted to snake_case from "updatedAt"
 	Name           string    `json:"name"`
 	Owner          OwnerJSON `json:"owner"`
 	EnvironmentIDs []string  `json:"environment_ids"` // converted to snake_case from "environmentIds"
@@ -102,8 +102,8 @@ type PostgresResponse struct {
 type PostgresJSON struct {
 	ID                      string            `json:"id"`
 	IPAllowList             []IPAllowJSON     `json:"ip_allow_list"`              // converted to snake_case from "ipAllowList"
-	CreatedAt               time.Time         `json:"created_at"`                 // converted to snake_case from "createdAt"
-	UpdatedAt               time.Time         `json:"updated_at"`                 // converted to snake_case from "updatedAt"
+	CreatedAt               time.Time         `json:"createdAt"`                 // converted to snake_case from "createdAt"
+	UpdatedAt               time.Time         `json:"updatedAt"`                 // converted to snake_case from "updatedAt"
 	ExpiresAt               time.Time         `json:"expires_at"`                 // converted to snake_case from "expiresAt"
 	DatabaseName            string            `json:"database_name"`              // converted to snake_case from "databaseName"
 	DatabaseUser            string            `json:"database_user"`              // converted to snake_case from "databaseUser"
@@ -175,7 +175,7 @@ type ServiceDetailsJSON struct {
 	PublishPath  string           `json:"publish_path"`  // converted to snake_case from "publishPath"
 	Previews     PreviewsJSON     `json:"previews"`
 	URL          string           `json:"url"`
-	BuildPlan    string           `json:"build_plan"` // converted to snake_case from "buildPlan"
+	BuildPlan    string           `json:"buildPlan"` // converted to snake_case from "buildPlan"
 }
 
 type ServiceDetails struct {
@@ -212,25 +212,26 @@ type ServiceResponse struct {
 
 type ServiceJSON struct {
 	ID                 string                 `json:"id"`
-	AutoDeploy         string                 `json:"auto_deploy"`         // converted to snake_case from "autoDeploy"
+	AutoDeploy         string                 `json:"autoDeploy"`         // converted to snake_case from "autoDeploy"
 	Branch             string                 `json:"branch"`
 	BuildFilter        BuildFilterJSON        `json:"build_filter"`        // converted to snake_case from "buildFilter"
-	CreatedAt          time.Time              `json:"created_at"`          // converted to snake_case from "createdAt"
-	DashboardURL       string                 `json:"dashboard_url"`       // converted to snake_case from "dashboardUrl"
-	EnvironmentID      string                 `json:"environment_id"`      // converted to snake_case from "environmentId"
-	ImagePath          string                 `json:"image_path"`          // converted to snake_case from "imagePath"
+	CreatedAt          time.Time              `json:"createdAt"`          // converted to snake_case from "createdAt"
+	DashboardURL       string                 `json:"dashboardUrl"`       // converted to snake_case from "dashboardUrl"
+	EnvironmentID      string                 `json:"environmentId"`      // converted to snake_case from "environmentId"
+	ImagePath          string                 `json:"imagePath"`          // converted to snake_case from "imagePath"
 	Name               string                 `json:"name"`
-	NotifyOnFail       string                 `json:"notify_on_fail"`      // converted to snake_case from "notifyOnFail"
-	OwnerID            string                 `json:"owner_id"`            // converted to snake_case from "ownerId"
+	NotifyOnFail       string                 `json:"notifyOnFail"`      // converted to snake_case from "notifyOnFail"
+	OwnerID            string                 `json:"ownerId"`            // converted to snake_case from "ownerId"
 	RegistryCredential RegistryCredentialJSON `json:"registry_credential"` // converted to snake_case from "registryCredential"
 	Repo               string                 `json:"repo"`
-	RootDir            string                 `json:"root_dir"`            // converted to snake_case from "rootDir"
+	RootDir            string                 `json:"rootDir"`            // converted to snake_case from "rootDir"
 	Slug               string                 `json:"slug"`
 	Suspended          string                 `json:"suspended"`
 	Suspenders         []string               `json:"suspenders"`
 	Type               string                 `json:"type"`
 	UpdatedAt          time.Time              `json:"updatedAt"`      // converted to snake_case from "updatedAt"
-	ServiceDetails     ServiceDetailsJSON     `json:"service_details"` // converted to snake_case from "serviceDetails"
+
+	ServiceDetails     ServiceDetailsJSON     `json:"serviceDetails"` // converted to snake_case from "serviceDetails"
 }
 
 type ServiceDescription struct {
@@ -267,7 +268,7 @@ type JobJSON struct {
 	StartCommand string    `json:"start_command"` // converted to snake_case from "startCommand"
 	PlanID       string    `json:"plan_id"`       // converted to snake_case from "planId"
 	Status       string    `json:"status"`
-	CreatedAt    time.Time `json:"created_at"`   // converted to snake_case from "createdAt"
+	CreatedAt    time.Time `json:"createdAt"`   // converted to snake_case from "createdAt"
 	StartedAt    time.Time `json:"started_at"`   // converted to snake_case from "startedAt"
 	FinishedAt   time.Time `json:"finished_at"`  // converted to snake_case from "finishedAt"
 }
@@ -291,11 +292,11 @@ type DiskResponse struct {
 type DiskJSON struct {
 	ID        string    `json:"id"`
 	Name      string    `json:"name"`
-	SizeGB    int       `json:"size_gb"`    // converted to snake_case from "sizeGB"
-	MountPath string    `json:"mount_path"` // converted to snake_case from "mountPath"
-	ServiceID string    `json:"service_id"` // converted to snake_case from "serviceId"
-	CreatedAt time.Time `json:"created_at"` // converted to snake_case from "createdAt"
-	UpdatedAt time.Time `json:"updated_at"` // converted to snake_case from "updatedAt"
+	SizeGB    int       `json:"sizeGb"`    // converted to snake_case from "sizeGB"
+	MountPath string    `json:"mountPath"` // converted to snake_case from "mountPath"
+	ServiceID string    `json:"serviceId"` // converted to snake_case from "serviceId"
+	CreatedAt time.Time `json:"createdAt"` // converted to snake_case from "createdAt"
+	UpdatedAt time.Time `json:"updatedAt"` // converted to snake_case from "updatedAt"
 }
 
 type DiskDescription struct {
@@ -406,8 +407,8 @@ type EnvGroupJSON struct {
 	ID            string            `json:"id"`
 	Name          string            `json:"name"`
 	OwnerID       string            `json:"owner_id"`      // converted to snake_case from "ownerId"
-	CreatedAt     time.Time         `json:"created_at"`    // converted to snake_case from "createdAt"
-	UpdatedAt     time.Time         `json:"updated_at"`    // converted to snake_case from "updatedAt"
+	CreatedAt     time.Time         `json:"createdAt"`    // converted to snake_case from "createdAt"
+	UpdatedAt     time.Time         `json:"updatedAt"`    // converted to snake_case from "updatedAt"
 	ServiceLinks  []ServiceLinkJSON `json:"service_links"` // converted to snake_case from "serviceLinks"
 	EnvironmentID string            `json:"environment_id"`// converted to snake_case from "environmentId"
 }
@@ -464,7 +465,7 @@ type RouteDescription struct {
 
 type PostgresqlBackupJSON struct {
 	ID        string `json:"id"`
-	CreatedAt string `json:"created_at"` // converted to snake_case from "createdAt"
+	CreatedAt string `json:"createdAt"` // converted to snake_case from "createdAt"
 	URL       string `json:"url"`
 }
 
