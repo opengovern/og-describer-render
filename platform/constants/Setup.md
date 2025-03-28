@@ -1,52 +1,27 @@
-# Render Integration Setup Guide for opencomply
+# Render Integration Guide
 
-This guide provides instructions to integrate your Render account with opencomply by creating a personal access token for API authorization.
+Learn how to integrate opensecurity with your Render workspace.
 
-## Steps
+This guide shows you how to connect opensecurity to a Render workspace using an API key. Each integration corresponds to a single Render workspace. Once integrated, opensecurity will discover and assess key Render resources—such as projects, deployments, services, storage, databases, and environments—enabling compliance and visibility across your Render environment.
 
-### 1. Create a Personal Access Token in Render
+## Prerequisites
 
-#### Log In
+- opensecurity installed and running
+- A Render account with admin permissions for the target workspace
 
-- Sign in to the Render Cloud Manager.
+## Create a Render API Key
 
-#### Access API Tokens
+1. Log in to the Render Dashboard.
+2. Click your profile icon in the upper-right corner and select **Account Settings**.
+3. Scroll to the **API Keys** section.
+4. Click **Generate Key**, provide a name if prompted, and then copy the generated key.
 
-- Click your username at the top of the screen and select **API Tokens**.
+## Configure Integration in opensecurity
 
-#### Create a Personal Access Token
+1. In the opensecurity dashboard, go to **Integrations > Render**.
+2. Select **API Key integration**.
+3. Paste in your Render API key.
+4. Specify the target workspace.
+5. Click **Save**.
 
-- Click **Create a Personal Access Token**.
-
-#### Configure the Token
-
-- **Label**: Enter a label for the token to identify its intended use, like **opencomply Integration**.
-- **Expiry**: Select an appropriate expiration time for the token.
-- **Permissions**:
-  - For each product or service, select **ReadOnly** access.
-  - For VPCs, select **Read/Write** (as Render does not offer Read-Only access for VPCs).
-
-#### Generate and Save Token
-
-- After configuration, ensure the token is saved securely as it will only be displayed once.
-
-### 2. Configure opencomply with the Token
-
-#### Access opencomply
-
-- Log in to the opencomply portal using your admin credentials.
-
-#### Add Integration
-
-- Navigate to **Integrations**, select **Render**, and click **Add New Integration**.
-
-#### Enter API Token
-
-- Paste the personal access token you generated from Render.
-
-#### Complete Integration
-
-- Click **Next**, review the integration details, and then **Confirm** to establish the connection.
-
-By following these steps, you have successfully integrated your Render account with opencomply, allowing read access and necessary write permissions for VPCs to enhance governance and compliance within the platform.
-```
+This Markdown format gives you a clear step-by-step guide on how to integrate opensecurity with Render, while also making it easy to read and follow.
