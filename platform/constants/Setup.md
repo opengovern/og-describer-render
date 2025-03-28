@@ -1,14 +1,14 @@
-# Linode Integration Setup Guide for opencomply
+# Render Integration Setup Guide for opencomply
 
-This guide provides instructions to integrate your Linode account with opencomply by creating a personal access token for API authorization.
+This guide provides instructions to integrate your Render account with opencomply by creating a personal access token for API authorization.
 
 ## Steps
 
-### 1. Create a Personal Access Token in Linode
+### 1. Create a Personal Access Token in Render
 
 #### Log In
 
-- Sign in to the Linode Cloud Manager.
+- Sign in to the Render Cloud Manager.
 
 #### Access API Tokens
 
@@ -24,7 +24,7 @@ This guide provides instructions to integrate your Linode account with opencompl
 - **Expiry**: Select an appropriate expiration time for the token.
 - **Permissions**:
   - For each product or service, select **ReadOnly** access.
-  - For VPCs, select **Read/Write** (as Linode does not offer Read-Only access for VPCs).
+  - For VPCs, select **Read/Write** (as Render does not offer Read-Only access for VPCs).
 
 #### Generate and Save Token
 
@@ -38,15 +38,15 @@ This guide provides instructions to integrate your Linode account with opencompl
 
 #### Add Integration
 
-- Navigate to **Integrations**, select **Linode**, and click **Add New Integration**.
+- Navigate to **Integrations**, select **Render**, and click **Add New Integration**.
 
 #### Enter API Token
 
-- Paste the personal access token you generated from Linode.
+- Paste the personal access token you generated from Render.
 
 #### Complete Integration
 
 - Click **Next**, review the integration details, and then **Confirm** to establish the connection.
 
-By following these steps, you have successfully integrated your Linode account with opencomply, allowing read access and necessary write permissions for VPCs to enhance governance and compliance within the platform.
+By following these steps, you have successfully integrated your Render account with opencomply, allowing read access and necessary write permissions for VPCs to enhance governance and compliance within the platform.
 ```
